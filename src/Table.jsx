@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 const TABLE_HEAD = () => {
   return (
@@ -15,7 +15,7 @@ const TABLE_BODY = (props) => {
         <td>{row.name}</td>
         <td>{row.job}</td>
         <td>
-          <button onClick={removeCharacter(index)}>Delete</button>
+          <button onClick={() => props.removeCharacter(index)}>Delete</button>
         </td>
       </tr>
     );
@@ -25,7 +25,6 @@ const TABLE_BODY = (props) => {
 
 const Table = (props) => {
   const { characterData, removeCharacter } = props;
-
   return (
     <table>
       <TABLE_HEAD />
